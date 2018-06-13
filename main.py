@@ -2,11 +2,6 @@ from ssh import SSH
 from helper import *
 
 
-ip = '138.201.159.43'
-mask = '120618'
-row_id = 'id200row'
-
-
 if __name__ == '__main__':
     ip = input("Enter ip: ").strip()
     mask = input("Enter mask: ").strip()
