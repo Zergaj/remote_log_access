@@ -13,10 +13,10 @@ def auth_data_alt(host):
 
 def find_result(log, num_id):
     # Searching num_id in log file.
-    # For our goals we need 100 rows before row with num_id and 100 rows after it.
+    # For our goals we need 100 rows before row containing num_id and 100 rows after it.
     # To achieve this we store rows in the res list from the first.
-    # When lenth of res reaches 100 items, and not found num_id, delete the first item.
-    # When num_id is found, add to list another 100 rows and return list.
+    # When length of res reaches 100 items, and not found num_id, delete the first item in res.
+    # When num_id is found, add another 100 rows to list and return it.
     # If we reached bottom of list and num_id wasn't found - return empty list.
 
     res = []
@@ -42,7 +42,7 @@ def find_result(log, num_id):
 
 def print_log(result):
     if len(result) == 0:
-        print("Num_id wasn't found in log file. Check log_file, maybe it is empty.")
+        print("Row with num_id wasn't found. Check log file, maybe it is empty.")
         return
 
     for i in result:
