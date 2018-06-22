@@ -28,7 +28,11 @@ class SSH:
         sftp_client = self.client.open_sftp()
         try:
             with sftp_client.open(path) as f:
-                return f
+                while True:
+                    line = f.readline()
+                    if not line:
+                        break
+                yield line
         except FileNotFoundError:
             return False
 
